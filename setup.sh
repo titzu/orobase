@@ -2,13 +2,14 @@
 localedef -c -f UTF-8 -i en_US en_US.UTF-8
 export DEBIAN_FRONTEND=noninteractive
 
-#locale-gen en en_US en_US.UTF-8
-#dpkg-reconfigure locales
+locale-gen en en_US en_US.UTF-8
+dpkg-reconfigure locales
 
-#export LC_ALL='en_US.UTF-8'
-#export LANG='en_US.UTF-8'
-#export LANGUAGE='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+export LANGUAGE='en_US.UTF-8'
 
+add-apt-repository ppa:ondrej/php
 apt-get -qy update
 apt-get -qqy upgrade
 
@@ -20,7 +21,7 @@ apt-get install -qqy apt-transport-https ca-certificates vim make git-core wget 
 mcrypt mysql-client zip unzip redis-tools netcat-openbsd
 
 # Install php
-apt-get install -qqy --no-install-recommends php-fpm php-cli php-common php-dev \
+apt-get install -qqy --no-install-recommends php7.2 php-fpm php-cli php-common php-dev \
 php-mysql php-curl php-gd php-mcrypt php-xmlrpc php-ldap \
 php-xsl php-intl php-soap php-mbstring php-zip php-bz2 php-redis php-tidy || exit 1
 
