@@ -2,12 +2,12 @@
 localedef -c -f UTF-8 -i en_US en_US.UTF-8
 export DEBIAN_FRONTEND=noninteractive
 
-locale-gen en en_US en_US.UTF-8
-dpkg-reconfigure locales
+#locale-gen en en_US en_US.UTF-8
+#dpkg-reconfigure locales
 
-export LC_ALL='en_US.UTF-8'
-export LANG='en_US.UTF-8'
-export LANGUAGE='en_US.UTF-8'
+#export LC_ALL='en_US.UTF-8'
+#export LANG='en_US.UTF-8'
+#export LANGUAGE='en_US.UTF-8'
 
 apt-get -qy update
 apt-get -qqy upgrade
